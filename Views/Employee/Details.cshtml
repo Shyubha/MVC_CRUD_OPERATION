@@ -1,0 +1,46 @@
+﻿@model MVC_CRUD_Operation_Practice.Models.Employee
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border">
+    <h1>Employee Details</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeSalary)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeSalary)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeAddress)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeAddress)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeRole)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeRole)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeCity)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeCity)
+        </dd>
+    </dl>
+    <div>
+        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-employeeId="@Model.EmployeeId">Edit</a>
+        <a class="btn btn-danger" asp-action="Index">Back</a>
+    </div>
+</div>

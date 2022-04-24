@@ -1,0 +1,55 @@
+﻿@model MVC_CRUD_Operation_Practice.Models.Employee;
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border" >
+    <h1> @ViewBag.PageName</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <hr />
+            <form asp-action="AddOrEdit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if (@ViewBag.IsEdit)
+                {
+                    <input type="hidden" asp-for="EmployeeId" />
+                }
+                <div class="form-group">
+                    <label asp-for="EmployeeName" class="control-label"></label>
+                    <input asp-for="EmployeeName" class="form-control" />
+                    <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeSalary" class="control-label"></label>
+                    <input asp-for="EmployeeSalary" class="form-control" />
+                    <span asp-validation-for="EmployeeSalary" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeAddress" class="control-label"></label>
+                    <input asp-for="EmployeeAddress" class="form-control" />
+                    <span asp-validation-for="EmployeeAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeRole" class="control-label"></label>
+                    <input asp-for="EmployeeRole" class="form-control" />
+                    <span asp-validation-for="EmployeeRole" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeCity" class="control-label"></label>
+                    <input asp-for="EmployeeCity" class="form-control" />
+                    <span asp-validation-for="EmployeeCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Save" />
+                    <a class="btn btn-danger" asp-action="Index">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

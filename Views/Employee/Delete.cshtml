@@ -1,0 +1,52 @@
+﻿@model MVC_CRUD_Operation_Practice.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deleting Employee</h2>
+
+<h3>Would you like to continue?</h3>
+<div class="container p-3 my-3 border">
+    <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EmployeeName)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.EmployeeSalary)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EmployeeSalary)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.EmployeeAddress)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EmployeeAddress)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.EmployeeRole)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EmployeeRole)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.EmployeeCity)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EmployeeCity)
+            </dd>
+        </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="EmployeeId" />
+                <input class="btn btn-primary" type="submit" value="Yes" />
+                <a class="btn btn-danger" asp-action="Index">No</a>
+            </form>
+
+ </div>
